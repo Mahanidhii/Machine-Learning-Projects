@@ -12,7 +12,7 @@ st.set_page_config(
 )
 
 # Title
-st.title("🤖 Machine Learning Models Showcase")
+st.title("Machine Learning Models Showcase")
 st.markdown("---")
 
 # Sidebar for model selection
@@ -23,8 +23,8 @@ model_choice = st.sidebar.radio(
 )
 
 # House Price Prediction
-if model_choice == "🏠 House Price Prediction":
-    st.header("🏠 House Price Prediction")
+if model_choice == "House Price Prediction":
+    st.header("House Price Prediction")
     st.markdown("Predict house prices based on various features using a Neural Network.")
     
     try:
@@ -51,7 +51,7 @@ if model_choice == "🏠 House Price Prediction":
             households = st.number_input("Households", min_value=1, value=126, step=1)
             median_income = st.number_input("Median Income (in 10,000s)", min_value=0.0, value=8.3252, format="%.4f")
         
-        if st.button("🔮 Predict House Price", key="house_predict"):
+        if st.button("Predict House Price", key="house_predict"):
             # Prepare input data
             input_data = np.array([[
                 longitude, latitude, housing_median_age, total_rooms,
@@ -83,7 +83,7 @@ if model_choice == "🏠 House Price Prediction":
 
 # Heart Disease Prediction
 elif model_choice == "❤️ Heart Disease Prediction":
-    st.header("❤️ Heart Disease Prediction")
+    st.header("❤️Heart Disease Prediction")
     st.markdown("Predict the presence of heart disease using an AdaBoost classifier.")
     
     try:
@@ -148,10 +148,10 @@ elif model_choice == "❤️ Heart Disease Prediction":
             st.markdown("---")
             
             if prediction == 1:
-                st.error("### ⚠️ Heart Disease Detected")
+                st.error("### Heart Disease Detected")
                 st.warning("The model predicts the presence of heart disease. Please consult with a healthcare professional.")
             else:
-                st.success("### ✅ No Heart Disease Detected")
+                st.success("### No Heart Disease Detected")
                 st.info("The model predicts no heart disease. However, regular check-ups are always recommended.")
             
             # Show probabilities
